@@ -1,0 +1,36 @@
+{
+  "name": "chili3d-desktop",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rspack dev",
+    "build": "rspack build",
+    "electron:dev": "electron .",
+    "electron:build": "electron-builder"
+  },
+  "main": "electron/main.js",
+  "build": {
+    "appId": "com.chili3d.desktop",
+    "productName": "Chili3D",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
